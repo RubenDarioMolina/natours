@@ -7,7 +7,7 @@ const AppError = require('../utils/appError');
 exports.getOverview = catchAsync(async (req, res, next) => {
   // 1 Get tour data from DB
   const tours = await Tour.find();
-  console.log(tours.length);
+  // console.log(tours.length);
   res.status(200).render('overview', {
     title: 'All Tours',
     tours,
@@ -55,7 +55,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
 });
 
 exports.updateUserData = catchAsync(async (req, res, next) => {
-  console.log('updating', req.body);
+  // console.log('updating', req.body);
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
     {
