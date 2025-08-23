@@ -16,6 +16,7 @@ const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 
 process.removeAllListeners('warning'); // remove node deprecation warnings
+// Start express app
 const app = express();
 app.set('view engine', 'pug'); // Template engine to send the data to client, use npm i
 app.set('views', path.join(__dirname, 'views'));
