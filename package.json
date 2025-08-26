@@ -4,9 +4,9 @@
   "description": "Learning APIs ",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "server.js",
     "dev": "nodemon server.js",
-    "start:prod": "set NODE_ENV=production nodemon server.js",
+    "start:prod": "node server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url /js",
     "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url /js"
