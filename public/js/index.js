@@ -73,8 +73,6 @@ if (bookBtn)
     bookTour(tourId);
   });
 const alertMessage = document.querySelector('body').dataset.alert;
-if (!alertMessage) {
-  showAlert('error','⚠️ No data-alert attribute found on <body>.');
+if (alertMessage) { 
+  showAlert('success', alertMessage);
 }
-console.log(alertMessage);
-if (alertMessage) showAlert('success', alertMessage);
