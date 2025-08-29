@@ -60,7 +60,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 // });
 
 exports.webhookCheckout = (req, res, next) => {
-  const signature = req.headers['stripe-signature'];
+  const signature = req.headers['webhookStripeSignatureHeader'];
   let event;
   try {
     event = stripe.webhooks.constructEvent(
