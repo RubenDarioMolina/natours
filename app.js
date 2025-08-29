@@ -16,6 +16,7 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
+const bookingController = require('./controllers/bookingController');
 
 process.removeAllListeners('warning'); // remove node deprecation warnings
 // Start express app
@@ -51,7 +52,11 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, try again in 1 hour',
 });
 app.use('/api', limiter);
-
+app.post(
+  '/webhook-checkout',
+  express.raw({ type: 'apliccation/json' }),
+  bookingController.webhookCheckout,
+); // this is in app.js becuase we need the data NOT as JSON, it has to be before the body parser
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());
