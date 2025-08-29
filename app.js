@@ -54,7 +54,7 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 app.post(
   '/webhook-checkout',
-  express.raw({ type: 'apliccation/json' }),
+  express.raw({ type: 'application/json' }),
   bookingController.webhookCheckout,
 ); // this is in app.js becuase we need the data NOT as JSON, it has to be before the body parser
 // Body parser, reading data from body into req.body
