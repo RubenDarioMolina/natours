@@ -30,7 +30,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       {
         quantity: 1,
         price_data: {
-          currency: 'inr',
+          currency: 'usd',
           unit_amount: tour.price * 100,
           product_data: {
             name: `${tour.name} Tour`,
@@ -60,8 +60,13 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 // });
 
 exports.webhookCheckout = (req, res, next) => {
+<<<<<<< HEAD
   console.log(rq.headers);
   const signature = req.headers['webhookStripeSignatureHeader'];
+=======
+  const signature = req.headers['stripe-signature'];
+  console.log (signature);
+>>>>>>> 5a16db3f7844b0a00ae71f19fe77fcb7d24fc7fe
   let event;
   try {
     event = stripe.webhooks.constructEvent(
