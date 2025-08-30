@@ -17,7 +17,7 @@ const alertMessage = document.querySelector('body').dataset.alert;
 // console.log(bookBtn);
 // values
 //delegation
-if (alertMessage) {
+if (!alertMessage) {
   showAlert('success', alertMessage);
   const locations = JSON.parse(
     document.getElementById('map').dataset.locations,
