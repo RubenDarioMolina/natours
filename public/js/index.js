@@ -4,7 +4,7 @@ import { bookTour } from './stripe';
 import displayMap from './leaflet';
 import logs from './login.js';
 import { updateSettings } from './updateSettings';
-import { showAlert } from './alert';
+import showAlert from './alert';
 
 // DOM elements
 const leaflet = document.getElementById('map');
@@ -17,13 +17,8 @@ const alertMessage = document.querySelector('body').dataset.alert;
 // console.log(bookBtn);
 // values
 //delegation
-if (!alertMessage) {
-  showAlert('success', alertMessage);
-  const locations = JSON.parse(
-    document.getElementById('map').dataset.locations,
-  );
-  displayMap(locations);
-}
+if (alertMessage) showAlert('success', alertMessage);
+
 if (leaflet) {
   const locations = JSON.parse(
     document.getElementById('map').dataset.locations,
