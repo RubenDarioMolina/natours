@@ -17,7 +17,7 @@ const alertMessage = document.querySelector('body').dataset.alert;
 // console.log(bookBtn);
 // values
 //delegation
-if (alertMessage) showAlert('success', alertMessage);
+if (alertMessage) showAlert('success', alertMessage, 10);
 
 if (leaflet) {
   const locations = JSON.parse(
@@ -27,7 +27,7 @@ if (leaflet) {
 }
 
 if (loginForm) {
-  console.log('error');
+  // console.log('error');
 
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
