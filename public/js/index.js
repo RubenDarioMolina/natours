@@ -13,9 +13,12 @@ const loginForm = document.querySelector('.form--login');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
+const alertMessage = document.querySelector('body').dataset.alert;
 // console.log(bookBtn);
 // values
 //delegation
+if (alertMessage) showAlert('success', alertMessage);
+
 if (leaflet) {
   const locations = JSON.parse(
     document.getElementById('map').dataset.locations,
@@ -72,7 +75,3 @@ if (bookBtn)
     const { tourId } = e.target.dataset;
     bookTour(tourId);
   });
-const alertMessage = document.querySelector('body').dataset.alert;
-if (alertMessage) { 
-  showAlert('success', alertMessage);
-}
