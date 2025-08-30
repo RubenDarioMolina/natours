@@ -60,6 +60,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 // });
 
 exports.webhookCheckout = (req, res, next) => {
+  console.log(rq.headers);
   const signature = req.headers['webhookStripeSignatureHeader'];
   let event;
   try {
